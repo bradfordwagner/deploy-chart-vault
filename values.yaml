@@ -1,0 +1,15 @@
+# Default values for vault.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicas: 1
+
+image:
+  repository: quay.io/bradfordwagner/base
+  tag: 2.2.2-debian_bullseye
+
+resources:
+  limits:
+    cpu: 50m
+    memory: 50Mi
+
