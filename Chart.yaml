@@ -1,5 +1,5 @@
 apiVersion: v2
-name: bwagnner-deploy-vault
+name: bwagner-deploy-vault
 type: application
 version: 1.0.0
 
