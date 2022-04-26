@@ -3,3 +3,11 @@
 vault:
   injector:
     enabled: false
+  server:
+    image:
+      repository: quay.io/bradfordwagner/vault
+      tag: 1.0.0-vault-1.9.4
+    service:
+      type: NodePort
+      nodePort: 30003
+
