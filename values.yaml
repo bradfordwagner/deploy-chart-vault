@@ -19,9 +19,13 @@ vault:
           cluster_address = "[::]:8201"
         }
         seal "azurekeyvault" {}
-        storage "file" {
-          path = "/vault/data"
-        }
+
+    # reference storage defined in tf cicd - this is in order to hide credentials
+    # based on: https://www.vaultproject.io/docs/platform/k8s/helm/run#protecting-sensitive-vault-configurations
+    extraArgs: -config=/vault/userconfig/storage/config.hcl
+    extraVolumes:
+      - type: secret
+        name: storage
 
     extraSecretEnvironmentVars:
       - secretName: keyvault
