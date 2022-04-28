@@ -10,4 +10,33 @@ vault:
     service:
       type: NodePort
       nodePort: 30003
+    standalone:
+      config: |
+        ui = true
+        listener "tcp" {
+          tls_disable = 1
+          address = "[::]:8200"
+          cluster_address = "[::]:8201"
+        }
+        seal "azurekeyvault" {}
+        storage "file" {
+          path = "/vault/data"
+        }
+
+    extraSecretEnvironmentVars:
+      - secretName: keyvault
+        envName: AZURE_TENANT_ID
+        secretKey: AZURE_TENANT_ID
+      - secretName: keyvault
+        envName: AZURE_CLIENT_ID
+        secretKey: AZURE_CLIENT_ID
+      - secretName: keyvault
+        envName: AZURE_CLIENT_SECRET
+        secretKey: AZURE_CLIENT_SECRET
+      - secretName: keyvault
+        envName: VAULT_AZUREKEYVAULT_VAULT_NAME
+        secretKey: VAULT_AZUREKEYVAULT_VAULT_NAME
+      - secretName: keyvault
+        envName: VAULT_AZUREKEYVAULT_KEY_NAME
+        secretKey: VAULT_AZUREKEYVAULT_KEY_NAME
 
