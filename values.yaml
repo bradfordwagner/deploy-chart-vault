@@ -2,7 +2,7 @@
 
 vault:
   injector:
-    enabled: false
+    enabled: true
   server:
     image:
       repository: quay.io/bradfordwagner/vault
@@ -10,6 +10,8 @@ vault:
     service:
       type: NodePort
       nodePort: 30003
+    dataStorage:
+      enabled: false # noto needed since we arae using azure blob
     standalone:
       config: |
         ui = true
