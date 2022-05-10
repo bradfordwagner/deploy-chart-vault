@@ -1,6 +1,10 @@
 ---
 
 vault:
+  csi:
+    enabled: true
+    image:
+      tag: 1.1.0
   injector:
     enabled: true
   server:
