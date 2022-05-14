@@ -4,7 +4,8 @@ vault:
   csi:
     enabled: true
     image:
-      tag: 1.1.0
+      repository: quay.io/bradfordwagner/vault
+      tag: 1.1.1-vault-csi-driver-1.1.0
   injector:
     enabled: true
   server:
