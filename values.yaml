@@ -5,13 +5,16 @@ vault:
     enabled: true
     image:
       repository: quay.io/bradfordwagner/vault
-      tag: 1.1.1-vault-csi-driver-1.1.0
+      tag: 1.3.0-vault-csi-driver-1.4.0
   injector:
     enabled: true
+    image:
+      repository: quay.io/bradfordwagner/vault
+      tag: 1.3.0-vault-webhook-injector-1.2.1
   server:
     image:
       repository: quay.io/bradfordwagner/vault
-      tag: 1.0.0-vault-1.9.4
+      tag: 1.3.0-vault-1.14.0
     service:
       type: NodePort
       nodePort: 30003
