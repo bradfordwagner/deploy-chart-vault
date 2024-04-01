@@ -40,6 +40,9 @@ vault:
         listener "tcp" {
           address = "[::]:8200"
           cluster_address = "[::]:8201"
+          tls_cert_file = "/vault/userconfig/tls/certificate"
+          tls_key_file  = "/vault/userconfig/tls/private_key"
+          # tls_client_ca_file = "/vault/userconfig/tls/vault.ca"
         }
         seal "azurekeyvault" {}
 
