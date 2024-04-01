@@ -1,4 +1,6 @@
 ---
+global:
+  tlsDisable: false
 
 vault:
   csi:
