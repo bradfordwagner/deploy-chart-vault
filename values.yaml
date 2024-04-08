@@ -17,6 +17,7 @@ vault:
     extraEnvironmentVars:
        VAULT_TLSCERT: /vault/userconfig/tls/certificate
        VAULT_TLSKEY: /vault/userconfig/tls/private_key
+       VAULT_CACERT: /vault/userconfig/tls/ca_cert
     volumes:
        - name: tls
          secret:
@@ -43,6 +44,7 @@ vault:
           cluster_address = "[::]:8201"
           tls_cert_file = "/vault/userconfig/tls/certificate"
           tls_key_file  = "/vault/userconfig/tls/private_key"
+          tls_client_ca_file = "/vault/userconfig/tls/ca_cert"
         }
         seal "azurekeyvault" {}
 
