@@ -6,13 +6,13 @@ vault:
   csi:
     enabled: true
     image:
-      repository: quay.io/bradfordwagner/vault
-      tag: 1.3.0-vault-csi-driver-1.4.0
+      repository: ghcr.io/bradfordwagner/vault-mirror
+      tag: 1.4.0-vault-csi-driver-1.4.0
   injector:
     enabled: true
     image:
-      repository: quay.io/bradfordwagner/vault
-      tag: 1.3.0-vault-webhook-injector-1.2.1
+      repository: ghcr.io/bradfordwagner/vault-mirror
+      tag: 1.4.0-vault-webhook-injector-1.2.1
   server:
     extraEnvironmentVars:
        VAULT_TLSCERT: /vault/userconfig/tls/certificate
@@ -28,8 +28,8 @@ vault:
          readOnly: true
 
     image:
-      repository: quay.io/bradfordwagner/vault
-      tag: 1.3.0-vault-1.14.0
+      repository: ghcr.io/bradfordwagner/vault-mirror
+      tag: 1.4.0-vault-1.14.0
     service:
       type: NodePort
       nodePort: 30003

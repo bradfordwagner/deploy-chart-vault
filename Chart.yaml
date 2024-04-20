@@ -1,7 +1,7 @@
 apiVersion: v2
 name: bradfordwagner-deploy-vault
 type: application
-version: 1.4.3
+version: 1.5.0
 
 dependencies:
   - name: vault
