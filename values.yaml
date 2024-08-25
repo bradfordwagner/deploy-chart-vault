@@ -7,7 +7,7 @@ vault:
     enabled: true
     image:
       repository: ghcr.io/bradfordwagner/vault-mirror
-      tag: 1.5.1-vault-webhook-injector_1.4.1
+      tag: 1.6.0-vault-webhook-injector_1.4.2
   server:
     extraEnvironmentVars:
        VAULT_TLSCERT: /vault/userconfig/tls/certificate
@@ -24,7 +24,7 @@ vault:
 
     image:
       repository: ghcr.io/bradfordwagner/vault-mirror
-      tag: 1.5.1-vault_1.16.1
+      tag: 1.6.0-vault_1.17.3
     service:
       type: NodePort
       nodePort: 30003
