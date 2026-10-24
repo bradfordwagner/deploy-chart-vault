@@ -6,8 +6,8 @@ vault:
   injector:
     enabled: true
     image:
-      repository: ghcr.io/bradfordwagner/vault-mirror
-      tag: 1.6.0-vault-webhook-injector_1.4.2
+      repository: hashicorp/vault-k8s
+      tag: 1.4.2
   server:
     extraEnvironmentVars:
        VAULT_TLSCERT: /vault/userconfig/tls/certificate
@@ -23,8 +23,8 @@ vault:
          readOnly: true
 
     image:
-      repository: ghcr.io/bradfordwagner/vault-mirror
-      tag: 1.6.0-vault_1.17.3
+      repository: hashicorp/vault
+      tag: 1.17.3
     service:
       type: NodePort
       nodePort: 30003

@@ -22,10 +22,10 @@ changes are almost entirely version bumps in `Chart.yaml`/`values.yaml` and conf
 
 ## Key configuration details (values.yaml)
 
-- Vault and the injector run from custom mirrored images at `ghcr.io/bradfordwagner/vault-mirror`
-  (not the upstream HashiCorp images) — when bumping versions, update the image `tag` to match
-  the new upstream Vault/injector version using this mirror's tag convention
-  (`<mirror-version>-vault_<vault-version>` / `<mirror-version>-vault-webhook-injector_<injector-version>`).
+- Vault and the injector run from the upstream HashiCorp images (`hashicorp/vault`,
+  `hashicorp/vault-k8s`), pinned explicitly in `values.yaml`. When bumping versions, set the image
+  `tag` to the upstream release tag. The former `ghcr.io/bradfordwagner/vault-mirror` images were
+  plain `FROM` re-tags with no changes; that mirror repo (`container-vault`) is archived.
 - Storage backend config is intentionally *not* defined in `values.yaml`. It's injected at deploy
   time via `extraArgs: -config=/vault/userconfig/storage/config.hcl` and an `extraSecret` named
   `storage`, sourced from Terraform/CI, specifically to keep credentials out of this repo (see the
