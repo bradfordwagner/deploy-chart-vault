@@ -16,8 +16,8 @@ configuration (image mirrors, TLS, Azure Key Vault auto-unseal, and injected sto
 
 See [`values.yaml`](values.yaml) for the full configuration. Notable points:
 
-- Vault server and the Agent Injector run from mirrored images at
-  `ghcr.io/bradfordwagner/vault-mirror` rather than the upstream HashiCorp images.
+- Vault server and the Agent Injector run from the upstream HashiCorp images
+  (`hashicorp/vault`, `hashicorp/vault-k8s`), pinned in `values.yaml`.
 - Storage backend configuration is **not** committed to this repo. It's supplied at deploy time via
   `-config=/vault/userconfig/storage/config.hcl`, mounted from a Kubernetes secret named `storage`
   (provisioned by Terraform/CI), to keep credentials out of version control. See
